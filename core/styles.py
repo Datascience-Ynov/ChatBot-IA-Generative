@@ -202,6 +202,49 @@ div[data-testid="stBottom"] > div > div {
     -webkit-text-fill-color: #ffffff !important;
 }
 
+/* ── Bouton Rechercher (et tous les boutons principaux hors sidebar) ── */
+.block-container button[kind="secondary"],
+.block-container button[kind="primary"],
+.block-container div[data-testid="stButton"] > button {
+    background-color: #4ef2d2 !important;
+    color: #0d1117 !important;
+    -webkit-text-fill-color: #0d1117 !important;
+    border: none !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+}
+.block-container div[data-testid="stButton"] > button:hover {
+    background-color: #2ed4b4 !important;
+}
+
+/* ── File uploader ── */
+div[data-testid="stFileUploader"] {
+    background-color: #1a2535 !important;
+    border: 1px solid #2a3a50 !important;
+    border-radius: 10px !important;
+}
+div[data-testid="stFileUploaderDropzone"] {
+    background-color: #1a2535 !important;
+    border: 1px dashed #2a3a50 !important;
+}
+
+/* ── Text input ── */
+div[data-testid="stTextInput"] input {
+    background-color: #1a2535 !important;
+    border: 1px solid #2a3a50 !important;
+    color: #d1dce8 !important;
+    -webkit-text-fill-color: #d1dce8 !important;
+    border-radius: 8px !important;
+}
+div[data-testid="stTextInput"] input:focus {
+    border-color: #4ef2d2 !important;
+    box-shadow: 0 0 0 1px #4ef2d2 !important;
+}
+div[data-testid="stTextInput"] input::placeholder {
+    color: #4a5b6f !important;
+    -webkit-text-fill-color: #4a5b6f !important;
+}
+
 /* ── Misc ── */
 hr { border-color: #1e2a38 !important; }
 ::-webkit-scrollbar { width: 6px; }
