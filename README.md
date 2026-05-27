@@ -4,6 +4,8 @@ Projet réalisé dans le cadre du cours **Deep Learning — IA Générative**
 Mastère Data Scientist · Lyon Ynov Campus  
 Auteur : **Mourad Amoussa**
 
+🌐 **Application en ligne :** [https://chatbot-ia-generative-fu3iw9ev9ghgmbsnon9fc6.streamlit.app/](https://chatbot-ia-generative-fu3iw9ev9ghgmbsnon9fc6.streamlit.app/)
+
 ---
 
 ## 📌 Objectif
@@ -39,6 +41,9 @@ Développer une interface conversationnelle simple permettant d'interagir avec u
 - 🌡️ **Paramètres de génération** ajustables (température, tokens max)
 - 🗑️ **Effacement de l'historique** en un clic
 - 🔐 **Gestion sécurisée** de la clé API via fichier `.env`
+- 📄 **Upload de CV (PDF)** avec extraction automatique du texte
+- 🔍 **Recherche d'offres d'emploi** en temps réel (LinkedIn, Indeed, Glassdoor)
+- 🤝 **Analyse de compatibilité CV / offre** par le LLM avec score et conseils
 
 ---
 
@@ -95,11 +100,19 @@ L'interface s'ouvre automatiquement sur http://localhost:8501
 
 ```
 chatbot_ia_generative/
-├── app.py              # Application principale Streamlit
-├── requirements.txt    # Dépendances Python
-├── .env                # Clé API (non versionné, à créer)
-├── .env.example        # Template de configuration
-└── README.md           # Ce fichier
+├── app.py                  # Application principale Streamlit
+├── requirements.txt        # Dépendances Python
+├── .env                    # Clé API (non versionné, à créer)
+├── .env.example            # Template de configuration
+├── README.md               # Ce fichier
+├── .streamlit/
+│   └── config.toml         # Thème sombre Streamlit
+└── core/
+    ├── __init__.py         # Exports du package
+    ├── models.py           # Dataclasses (Message, JobOffer)
+    ├── services.py         # LLMService, CVParser, JobSearchService, CompatibilityAnalyzer
+    ├── ui.py               # Composants UI (bulles, cartes offres)
+    └── styles.py           # CSS global injecté au démarrage
 ```
 
 ---
@@ -128,9 +141,11 @@ Utilisateur (navigateur)
 
 ---
 
-## 📷 Démo
+## 🌐 Démo en ligne
 
-> Voir la vidéo de démonstration : `demo.mp4`
+L'application est hébergée et accessible publiquement sur Streamlit Community Cloud :
+
+👉 **[https://chatbot-ia-generative-fu3iw9ev9ghgmbsnon9fc6.streamlit.app/](https://chatbot-ia-generative-fu3iw9ev9ghgmbsnon9fc6.streamlit.app/)**
 
 ---
 
@@ -145,5 +160,6 @@ Utilisateur (navigateur)
 
 - [NVIDIA NIM — Documentation](https://docs.api.nvidia.com/)
 - [Streamlit — Documentation](https://docs.streamlit.io/)
-- [Hugging Face — Transformers](https://huggingface.co/docs/transformers)
+- [python-jobspy — Job scraping](https://github.com/Bunsly/JobSpy)
+- [pdfplumber — PDF extraction](https://github.com/jsvine/pdfplumber)
 - [OpenAI Python SDK](https://github.com/openai/openai-python)
